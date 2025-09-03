@@ -1,0 +1,40 @@
+
+.botLabel {
+    -fx-font-size: 14px;
+}
+
+.combo-box {
+    -fx-background-color: #525b68;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 2 7 2 7;
+    -fx-border-color: lightgrey;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #525b68;
+    -fx-text-fill: white;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #525b68;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: lightgrey;
+    -fx-padding: 5
+}
+
+.combo-box .arrow {
+    -fx-background-color: white;
+    -fx-padding: 5
+}
+
+.combo-box .combo-box-popup .list-view {
+    -fx-background-color: #525b68;
+    -fx-control-inner-background: #525b68;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+

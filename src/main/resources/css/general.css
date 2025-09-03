@@ -1,0 +1,99 @@
+
+.root {
+    -fx-background-color: linear-gradient(to top left, #403E73 0.65%, #242351 99.42%);
+}
+
+.label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color:
+            #5353B2,
+            linear-gradient(to top, #2A2A5F 0%, #39397D 25%, #47479A 50%, #5353B2 75%, #6969E0 100%); /* Inner gradient */
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5;
+    -fx-padding: 0 10;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+}
+
+.text-field {
+    -fx-background-color: #525b68;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 5 10 5 10;
+    -fx-border-color: lightgrey;
+}
+
+.list-cell {
+    -fx-padding: 4;
+    -fx-background-color: transparent;
+}
+
+.list-cell .text {
+    -fx-fill: white;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+    -fx-padding: 5;
+}
+
+.list-cell.other {
+    -fx-alignment: center-left;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-radius: 5;
+    -fx-border-color: #292759;
+}
+
+.list-cell.me {
+    -fx-alignment: center-right;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-radius: 5;
+    -fx-border-color: #292759;
+}
+
+.upper-listviews .list-cell:hover {
+    -fx-background-color: #3b396e;
+    -fx-background-radius: 5;
+    -fx-border-color: #5a579b;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+#chatView {
+    -fx-background-color: #444289;
+    -fx-background-radius: 5;
+    -fx-effect: none;
+}
+
+.scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-padding: 0;
+    -fx-pref-width: 0;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: #525b68;
+    -fx-background-insets: 0;
+    -fx-padding: 2;
+    -fx-background-radius: 3;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #7d8797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 3;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #525b68;
+}
+
+
+

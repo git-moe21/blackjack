@@ -1,0 +1,56 @@
+
+.outerBackgroundCircle {
+    -fx-effect: dropshadow(gaussian, rgba(41, 39, 89, 0.8), 0, 4, 4, 1);
+}
+
+.HBoxBet {
+    -fx-border-color: white;
+    -fx-background-radius: 10;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10;
+}
+
+.upperVBoxBet {
+    -fx-background-color: #292759;
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: white;
+}
+
+.lowerVBoxBet {
+    -fx-background-color: #444289;
+    -fx-background-radius: 0 0 10 10;
+}
+
+.gameControllsVBox {
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-border-width: 2px;
+}
+
+.gameControllsVBox .button {
+    -fx-font-size: 20px;
+}
+
+.list-view {
+    -fx-background-color: #444289;
+    -fx-background-radius: 5;
+}
+
+.cardVBox {
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-border-width: 2px;
+}
+
+.playerAvatarCircle {
+    -fx-stroke: white;
+    -fx-stroke-width: 2px;
+}
+
+.playerBets {
+    -fx-padding: 2px;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 100;
+}

@@ -1,0 +1,6 @@
+Admin:2000000
+Paul:500
+Moritz:500
+Einstein:500
+Jonas:500
+Athie:500

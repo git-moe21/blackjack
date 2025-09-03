@@ -1,0 +1,6 @@
+
+.list-view {
+    -fx-background-color: #444289;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(41, 39, 89, 0.8), 0, 4, 4, 1);
+}

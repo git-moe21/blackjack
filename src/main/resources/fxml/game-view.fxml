@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<?import javafx.scene.image.ImageView?>
+
+<Pane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.blackjack.controllers.GameController"
+      fx:id="root"
+      prefWidth="1600"
+      prefHeight="900"
+      styleClass="root">
+
+    <stylesheets>
+        <URL value="@../css/general.css"/>
+        <URL value="@../css/game-view.css"/>
+    </stylesheets>
+
+    <!-- Background Circle -->
+    <Circle styleClass="outerBackgroundCircle" centerX="800" fill="#2A2A5F" radius="500.0"/>
+    <Circle centerX="800" fill="#32326E" radius="450.0"/>
+
+    <!-- Player Container -->
+    <VBox layoutX="116" layoutY="150" alignment="CENTER">
+        <Circle fx:id="avatar1" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player1Label"/>
+        <Label fx:id="player1ScoreLabel" visible="false"/>
+    </VBox>
+
+    <VBox layoutX="236" layoutY="350" alignment="CENTER">
+        <Circle fx:id="avatar2" fill="WHITE" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player2Label"/>
+        <Label fx:id="player2ScoreLabel" visible="false"/>
+    </VBox>
+
+    <VBox layoutX="436" layoutY="500" alignment="CENTER">
+        <Circle fx:id="avatar3" fill="WHITE" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player3Label"/>
+        <Label fx:id="player3ScoreLabel" visible="false"/>
+    </VBox>
+
+    <VBox layoutX="636" layoutY="580" alignment="CENTER">
+        <Circle fx:id="avatar4" fill="WHITE" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player4Label"/>
+        <Label fx:id="player4ScoreLabel" visible="false"/>
+    </VBox>
+
+    <VBox layoutX="900" layoutY="580" alignment="CENTER">
+        <Circle fx:id="avatar5" fill="WHITE" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player5Label"/>
+        <Label fx:id="player5ScoreLabel" visible="false"/>
+    </VBox>
+
+    <VBox layoutX="1100" layoutY="500" alignment="CENTER">
+        <Circle fx:id="avatar6" fill="WHITE" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player6Label"/>
+        <Label fx:id="player6ScoreLabel" visible="false"/>
+    </VBox>
+
+    <VBox layoutX="1300" layoutY="350" alignment="CENTER">
+        <Circle fx:id="avatar7" fill="WHITE" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player7Label"/>
+        <Label fx:id="player7ScoreLabel" visible="false"/>
+    </VBox>
+
+    <VBox layoutX="1420" layoutY="150" alignment="CENTER">
+        <Circle fx:id="avatar8" fill="WHITE" radius="32.0" styleClass="playerAvatarCircle"/>
+        <Label fx:id="player8Label"/>
+        <Label fx:id="player8ScoreLabel" visible="false"/>
+    </VBox>
+
+    <!-- Boxes -->
+    <Label fx:id="timerLabel" layoutX="20" layoutY="20"/>
+    <VBox layoutX="760" layoutY="460" alignment="CENTER">
+        <Label fx:id="resultLabel"/>
+        <Label fx:id="winningsLabel"/>
+    </VBox>
+
+    <VBox prefWidth="300" prefHeight="200" layoutX="1275" layoutY="675" styleClass="HBoxBet">
+        <VBox styleClass="upperVBoxBet">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <Label>Dein Guthaben:</Label>
+            <Label fx:id="playerBalanceLabel">0</Label>
+        </VBox>
+        <VBox spacing="10.0" styleClass="lowerVBoxBet">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <Label>Betrag wählen:</Label>
+            <TextField fx:id="stakeField"/>
+            <Button fx:id="setStakeButton" onAction="#setStake">Geld setzen</Button>
+        </VBox>
+    </VBox>
+
+    <VBox spacing="20.0" styleClass="gameControllsVBox" prefWidth="300" prefHeight="100" layoutX="650" layoutY="775">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+        <HBox spacing="20.0">
+            <Button fx:id="StandButton" onAction="#standClick">Stand</Button>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="HitButton" onAction="#hitClick">Hit</Button>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="DDButton" onAction="#DDClick">DD</Button>
+        </HBox>
+        <HBox spacing="20.0">
+            <Button fx:id="SplitButton" onAction="#splitClick">Split</Button>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="SurrenderButton" onAction="#surrenderClick">Surrender</Button>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="10.0" prefWidth="100" prefHeight="50" layoutX="1500" layoutY="25">
+        <Button onAction="#quitClick">verlassen</Button>
+        <Button onAction="#infoClick">info</Button>
+    </VBox>
+
+    <!-- Chat -->
+    <VBox spacing="10.0" layoutX="25" layoutY="645">
+        <Label text="Chat"/>
+        <VBox spacing="3.0" prefWidth="450.0" prefHeight="200.0" styleClass="list-view">
+            <ListView fx:id="chatView"/>
+            <TextField fx:id="chatField" promptText="Gebe eine Nachricht ein..." onKeyPressed="#sendChatMessage"/>
+        </VBox>
+    </VBox>
+
+    <!-- Label Container Bet -->
+    <Label fx:id="player1BetLabel" styleClass="playerBets" layoutX="340" layoutY="170" visible="false"/>
+    <Label fx:id="player2BetLabel" styleClass="playerBets" layoutX="420" layoutY="300" visible="false"/>
+    <Label fx:id="player3BetLabel" styleClass="playerBets" layoutX="510" layoutY="370" visible="false"/>
+    <Label fx:id="player4BetLabel" styleClass="playerBets" layoutX="650" layoutY="435" visible="false"/>
+    <Label fx:id="player5BetLabel" styleClass="playerBets" layoutX="890" layoutY="445" visible="false"/>
+    <Label fx:id="player6BetLabel" styleClass="playerBets" layoutX="1055" layoutY="370" visible="false"/>
+    <Label fx:id="player7BetLabel" styleClass="playerBets" layoutX="1130" layoutY="300" visible="false"/>
+    <Label fx:id="player8BetLabel" styleClass="playerBets" layoutX="1215" layoutY="170" visible="false"/>
+
+    <!-- Card Container Dealer -->
+    <VBox prefWidth="65" prefHeight="100" layoutX="695" layoutY="50" styleClass="cardVBox"/>
+    <VBox prefWidth="65" prefHeight="100" layoutX="840" layoutY="50" styleClass="cardVBox"/>
+
+    <!-- Card Container Player -->
+    <VBox prefWidth="65" prefHeight="100" layoutX="695" layoutY="240" styleClass="cardVBox"/>
+    <VBox prefWidth="65" prefHeight="100" layoutX="840" layoutY="240" styleClass="cardVBox"/>
+
+    <!-- Card Container Player Split -->
+    <VBox fx:id="playerSplitVBox1" prefWidth="65" prefHeight="100" layoutX="615" layoutY="240" visible="false" styleClass="cardVBox"/>
+    <VBox fx:id="playerSplitVBox2" prefWidth="65" prefHeight="100" layoutX="920" layoutY="240" visible="false" styleClass="cardVBox"/>
+
+    <!-- Image Container Cards-->
+    <ImageView fx:id="dealerImageView1" layoutX="695" layoutY="50" fitWidth="65" fitHeight="100">
+    </ImageView>
+    <ImageView fx:id="dealerImageView2" layoutX="840" layoutY="50" fitWidth="65" fitHeight="100">
+    </ImageView>
+    <ImageView fx:id="playerImageView1" layoutX="695" layoutY="240" fitWidth="65" fitHeight="100">
+    </ImageView>
+    <ImageView fx:id="playerImageView2" layoutX="840" layoutY="240" fitWidth="65" fitHeight="100">
+    </ImageView>
+    <ImageView fx:id="playerSplitImageView1" layoutX="615" layoutY="240" fitWidth="65" fitHeight="100">
+    </ImageView>
+    <ImageView fx:id="playerSplitImageView2" layoutX="920" layoutY="240" fitWidth="65" fitHeight="100">
+    </ImageView>
+
+</Pane>
+
+
